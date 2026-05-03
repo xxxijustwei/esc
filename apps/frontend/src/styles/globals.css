@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@esc/ui/theme.css";
+@import "@esc/ui/daisy-ui.css";
+
+@source "../../../../packages/ui/src";

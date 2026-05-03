@@ -1,0 +1,14 @@
+{
+  "extends": "@esc/configs/tsconfig/base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ESNext"],
+    "types": ["./worker-configuration.d.ts"],
+    "noEmit": true,
+    "isolatedModules": true
+  },
+  "include": ["worker-configuration.d.ts", "src/**/*.ts"],
+  "exclude": ["node_modules", "dist", ".wrangler"]
+}

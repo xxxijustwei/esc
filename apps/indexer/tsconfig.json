@@ -1,0 +1,26 @@
+{
+  "extends": "@esc/configs/tsconfig/base.json",
+  "compilerOptions": {
+    // Type checking
+    "noUncheckedIndexedAccess": true,
+
+    // Interop constraints
+    "verbatimModuleSyntax": false,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+
+    // Language and environment
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "noEmit": true,
+    "lib": ["ES2022"],
+    "target": "ES2022",
+
+    // Skip type checking for node modules
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": ["ponder-env.d.ts", "**/*.ts"],
+  "exclude": ["node_modules", "generated", ".ponder"]
+}
