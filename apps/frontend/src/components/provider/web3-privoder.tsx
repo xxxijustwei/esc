@@ -3,7 +3,9 @@
 import "@rainbow-me/rainbowkit/styles.css";
 import {
   connectorsForWallets,
+  darkTheme,
   Locale,
+  lightTheme,
   RainbowKitProvider,
 } from "@rainbow-me/rainbowkit";
 import {
@@ -13,6 +15,7 @@ import {
   walletConnectWallet,
 } from "@rainbow-me/rainbowkit/wallets";
 import { useLocale } from "next-intl";
+import { useTheme } from "next-themes";
 import { createConfig, http, WagmiProvider } from "wagmi";
 import { arbitrum, base, bsc, mainnet } from "wagmi/chains";
 
@@ -46,10 +49,14 @@ const config = createConfig({
 
 export const Web3Provider = ({ children }: { children: React.ReactNode }) => {
   const locale = useLocale();
-
+  const theme = useTheme();
   return (
     <WagmiProvider config={config}>
-      <RainbowKitProvider locale={locale as Locale} modalSize="compact">
+      <RainbowKitProvider
+        theme={theme.resolvedTheme === "dark" ? darkTheme() : lightTheme()}
+        locale={locale as Locale}
+        modalSize="compact"
+      >
         {children}
       </RainbowKitProvider>
     </WagmiProvider>

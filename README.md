@@ -6,6 +6,7 @@ ESC is a Web3 monorepo with a Next.js frontend, Cloudflare Workers backend, Pond
 
 - pnpm workspaces + Turborepo
 - Next.js 16, React 19, Tailwind CSS 4, next-intl
+- Shared UI with Radix UI, DaisyUI, Motion, and Hugeicons
 - RainbowKit, Wagmi, Viem
 - Cloudflare Workers, Hono, Wrangler
 - Ponder indexer with GraphQL/SQL APIs
@@ -55,6 +56,14 @@ pnpm dev
 Run one app:
 
 ```bash
+pnpm dev:frontend
+pnpm dev:backend
+pnpm dev:indexer
+```
+
+Equivalent workspace filters:
+
+```bash
 pnpm --filter @esc/frontend dev
 pnpm --filter @esc/backend dev
 pnpm --filter @esc/indexer dev
@@ -85,9 +94,3 @@ forge test
 forge fmt
 ```
 
-## Notes
-
-- Frontend supports wallet connection and i18n.
-- Backend exposes `/` and `/health`.
-- Indexer tracks `PrimitiveManager:Swap` events on Ethereum mainnet.
-- Root license is not currently declared.

@@ -6,6 +6,9 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:frontend": "turbo run dev --filter=@esc/frontend",
+    "dev:backend": "turbo run dev --filter=@esc/backend",
+    "dev:indexer": "turbo run dev --filter=@esc/indexer",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
     "check": "turbo run check",

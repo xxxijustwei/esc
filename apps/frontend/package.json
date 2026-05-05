@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "@esc/ui": "workspace:*",
+    "@hugeicons/core-free-icons": "^4.1.1",
     "@rainbow-me/rainbowkit": "2.2.10",
     "@tanstack/react-query": "^5.90.2",
-    "lucide-react": "^1.14.0",
     "next": "16.1.6",
     "next-intl": "^4.5.3",
     "next-themes": "^0.4.6",

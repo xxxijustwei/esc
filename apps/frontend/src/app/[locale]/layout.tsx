@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { ThemeProvider } from "next-themes";
-import { Web3Provider } from "@/components/web3-privoder";
+import { Web3Provider } from "@/components/provider/web3-privoder";
 import "@/styles/globals.css";
 
 const fontSans = Geist({
@@ -34,10 +34,10 @@ export default async function RootLayout({
       lang={locale}
       suppressHydrationWarning
       className={cn(
-        "antialiased",
-        fontSans.variable,
         "font-mono",
         jetbrainsMono.variable,
+        "antialiased",
+        fontSans.variable,
       )}
     >
       <body>

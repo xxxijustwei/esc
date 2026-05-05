@@ -1,6 +1,7 @@
+import { Icon } from "@esc/ui/components/icon";
 import { Skeleton } from "@esc/ui/components/skeleton";
 import { cn } from "@esc/ui/lib/utils";
-import { AlertTriangleIcon } from "lucide-react";
+import { Alert01Icon } from "@hugeicons/core-free-icons";
 import { useCallback, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -76,7 +77,7 @@ export const LazyImage = ({
 
       {hasError && (
         <div className="absolute inset-0 flex items-center justify-center gap-2 bg-muted">
-          <AlertTriangleIcon />
+          <Icon icon={Alert01Icon} />
         </div>
       )}
     </div>
@@ -133,7 +134,7 @@ export const UnoptimizedLazyImage = ({
 
       {hasError && (
         <div className="absolute inset-0 flex items-center justify-center gap-2 bg-muted">
-          <AlertTriangleIcon />
+          <Icon icon={Alert01Icon} />
         </div>
       )}
     </div>

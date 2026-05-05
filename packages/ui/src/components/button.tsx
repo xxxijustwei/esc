@@ -1,13 +1,14 @@
 "use client";
 
+import { Loading03Icon } from "@hugeicons/core-free-icons";
 import { cva, type VariantProps } from "class-variance-authority";
-import { Loader2Icon } from "lucide-react";
 import { AnimatePresence, domAnimation, LazyMotion, m } from "motion/react";
 import { Slot } from "radix-ui";
 import type * as React from "react";
 import { useCallback, useState } from "react";
 import { useRipple } from "../hooks/use-ripple";
 import { cn } from "../lib/utils";
+import { Icon } from "./icon";
 
 const buttonVariants = cva(
   cn(
@@ -118,7 +119,8 @@ function Button({
     >
       {isLoading && (
         <>
-          <Loader2Icon
+          <Icon
+            icon={Loading03Icon}
             className="size-4 shrink-0 animate-spin"
             aria-hidden="true"
           />
@@ -139,7 +141,10 @@ function Button({
                   transform: "scale(0)",
                   opacity: 0.35,
                 }}
-                animate={{ transform: "scale(2)", opacity: 0 }}
+                animate={{
+                  transform: "scale(2)",
+                  opacity: 0,
+                }}
                 exit={{ opacity: 0 }}
                 style={{
                   position: "absolute",

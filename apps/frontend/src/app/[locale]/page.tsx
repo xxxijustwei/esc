@@ -5,8 +5,8 @@ import { useTranslations } from "next-intl";
 import { ViewTransition } from "react";
 import { LanguageToggle } from "@/components/language-toggle";
 import { UnoptimizedLazyImage } from "@/components/lazy-image";
-import { ModeToggle } from "@/components/mode-toggle";
 import { OptimizeLink } from "@/components/optimize-link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const Page = () => {
   const t = useTranslations("intro");
@@ -16,7 +16,7 @@ const Page = () => {
         <div className="absolute top-4 right-4">
           <div className="flex items-center gap-2">
             <LanguageToggle />
-            <ModeToggle />
+            <ThemeToggle />
             <ConnectButton />
           </div>
         </div>

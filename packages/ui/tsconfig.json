@@ -2,6 +2,8 @@
   "extends": "@esc/configs/tsconfig/react.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "paths": {
       "@esc/ui/*": ["./src/*"]
     }

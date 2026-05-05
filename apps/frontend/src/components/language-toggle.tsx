@@ -7,7 +7,8 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@esc/ui/components/dropdown-menu";
-import { EarthIcon } from "lucide-react";
+import { Icon } from "@esc/ui/components/icon";
+import { TranslationIcon } from "@hugeicons/core-free-icons";
 import { useTranslations } from "next-intl";
 import { useI18n } from "@/i18n/hook";
 import { LANGUAGES } from "@/i18n/routing";
@@ -19,8 +20,8 @@ export const LanguageToggle = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="size-8">
-          <EarthIcon className="size-6!" />
+        <Button variant="ghost" size="icon" className="size-9">
+          <Icon icon={TranslationIcon} className="size-6!" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent aria-label="Languages" className="min-w-fit">
