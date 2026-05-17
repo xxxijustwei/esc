@@ -9,10 +9,6 @@ bundle
 # pnpm local store
 .pnpm-store
 
-# AI agent files
-.agents/
-skills-lock.json
-
 # Environment files
 .env*
 !.env.example
