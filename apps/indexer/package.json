@@ -19,14 +19,14 @@
     "format:check": "biome format"
   },
   "dependencies": {
-    "ponder": "^0.16.6",
-    "hono": "^4.5.0",
-    "viem": "^2.21.3"
+    "ponder": "catalog:backend",
+    "hono": "catalog:backend",
+    "viem": "catalog:web3"
   },
   "devDependencies": {
     "@esc/configs": "workspace:*",
-    "@types/node": "^20.10.0",
-    "typescript": "^5.3.2"
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
   },
   "engines": {
     "node": ">=18.14"

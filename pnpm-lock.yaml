@@ -4,6 +4,127 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  backend:
+    hono:
+      specifier: ^4.12.16
+      version: 4.12.16
+    ponder:
+      specifier: ^0.16.6
+      version: 0.16.6
+  default:
+    '@tanstack/react-query':
+      specifier: ^5.90.2
+      version: 5.100.8
+    '@types/node':
+      specifier: ^24
+      version: 24.12.4
+    '@types/react':
+      specifier: ^19.2.14
+      version: 19.2.14
+    '@types/react-dom':
+      specifier: ^19.2.3
+      version: 19.2.3
+    class-variance-authority:
+      specifier: ^0.7.1
+      version: 0.7.1
+    clsx:
+      specifier: ^2.1.1
+      version: 2.1.1
+    pino:
+      specifier: 10.0.0
+      version: 10.0.0
+    react:
+      specifier: ^19.2.4
+      version: 19.2.5
+    react-dom:
+      specifier: ^19.2.4
+      version: 19.2.5
+    typescript:
+      specifier: 6.0.2
+      version: 6.0.2
+    zod:
+      specifier: ^3.25.76
+      version: 3.25.76
+  tools:
+    '@biomejs/biome':
+      specifier: 2.3.8
+      version: 2.3.8
+    husky:
+      specifier: ^9.1.7
+      version: 9.1.7
+    lint-staged:
+      specifier: ^16.2.7
+      version: 16.2.7
+    pino-pretty:
+      specifier: ^13.1.2
+      version: 13.1.3
+    turbo:
+      specifier: ^2.9.7
+      version: 2.9.7
+    wrangler:
+      specifier: ^4.4.0
+      version: 4.87.0
+  web:
+    '@hugeicons/core-free-icons':
+      specifier: ^4.1.1
+      version: 4.1.1
+    '@hugeicons/react':
+      specifier: ^1.1.6
+      version: 1.1.6
+    '@tailwindcss/postcss':
+      specifier: ^4.2.4
+      version: 4.2.4
+    daisyui:
+      specifier: ^5.5.19
+      version: 5.5.19
+    motion:
+      specifier: ^12.23.12
+      version: 12.38.0
+    next:
+      specifier: 16.2.6
+      version: 16.2.6
+    next-intl:
+      specifier: ^4.5.3
+      version: 4.11.0
+    next-themes:
+      specifier: ^0.4.6
+      version: 0.4.6
+    nuqs:
+      specifier: ^2.7.0
+      version: 2.8.9
+    radix-ui:
+      specifier: ^1.4.3
+      version: 1.4.3
+    react-intersection-observer:
+      specifier: ^10.0.0
+      version: 10.0.3
+    shadcn:
+      specifier: ^4.6.0
+      version: 4.6.0
+    sonner:
+      specifier: ^2.0.7
+      version: 2.0.7
+    tailwind-merge:
+      specifier: ^3.5.0
+      version: 3.5.0
+    tailwindcss:
+      specifier: 4.2.4
+      version: 4.2.4
+    tw-animate-css:
+      specifier: 1.4.0
+      version: 1.4.0
+  web3:
+    '@rainbow-me/rainbowkit':
+      specifier: 2.2.10
+      version: 2.2.10
+    viem:
+      specifier: 2.48.8
+      version: 2.48.8
+    wagmi:
+      specifier: 2.19.5
+      version: 2.19.5
+
 overrides:
   '@walletconnect/logger>pino': 10.0.0
 
@@ -12,38 +133,38 @@ importers:
   .:
     devDependencies:
       '@biomejs/biome':
-        specifier: 2.3.8
+        specifier: catalog:tools
         version: 2.3.8
       '@esc/configs':
         specifier: workspace:*
         version: link:packages/configs
       husky:
-        specifier: ^9.1.7
+        specifier: catalog:tools
         version: 9.1.7
       lint-staged:
-        specifier: ^16.2.7
+        specifier: catalog:tools
         version: 16.2.7
       turbo:
-        specifier: ^2.9.7
+        specifier: catalog:tools
         version: 2.9.7
       typescript:
-        specifier: ~5.8.0
-        version: 5.8.3
+        specifier: 'catalog:'
+        version: 6.0.2
 
   apps/backend:
     dependencies:
       hono:
-        specifier: ^4.12.16
+        specifier: catalog:backend
         version: 4.12.16
     devDependencies:
       '@esc/configs':
         specifier: workspace:*
         version: link:../../packages/configs
       typescript:
-        specifier: ~5.8.0
-        version: 5.8.3
+        specifier: 'catalog:'
+        version: 6.0.2
       wrangler:
-        specifier: ^4.4.0
+        specifier: catalog:tools
         version: 4.87.0(bufferutil@4.1.0)(utf-8-validate@5.0.10)
 
   apps/frontend:
@@ -52,160 +173,160 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       '@hugeicons/core-free-icons':
-        specifier: ^4.1.1
+        specifier: catalog:web
         version: 4.1.1
       '@rainbow-me/rainbowkit':
-        specifier: 2.2.10
+        specifier: catalog:web3
         version: 2.2.10(@tanstack/react-query@5.100.8(react@19.2.5))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)(viem@2.48.8(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76))(wagmi@2.19.5(@tanstack/query-core@5.100.8)(@tanstack/react-query@5.100.8(react@19.2.5))(@types/react@19.2.14)(bufferutil@4.1.0)(immer@10.0.2)(react@19.2.5)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.48.8(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76))(zod@3.25.76))
       '@tanstack/react-query':
-        specifier: ^5.90.2
+        specifier: 'catalog:'
         version: 5.100.8(react@19.2.5)
       next:
-        specifier: 16.2.6
+        specifier: catalog:web
         version: 16.2.6(@opentelemetry/api@1.9.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       next-intl:
-        specifier: ^4.5.3
+        specifier: catalog:web
         version: 4.11.0(next@16.2.6(@opentelemetry/api@1.9.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
       next-themes:
-        specifier: ^0.4.6
+        specifier: catalog:web
         version: 0.4.6(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       nuqs:
-        specifier: ^2.7.0
+        specifier: catalog:web
         version: 2.8.9(next@16.2.6(@opentelemetry/api@1.9.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       pino:
-        specifier: 10.0.0
+        specifier: 'catalog:'
         version: 10.0.0
       react:
-        specifier: ^19.2.4
+        specifier: 'catalog:'
         version: 19.2.5
       react-dom:
-        specifier: ^19.2.4
+        specifier: 'catalog:'
         version: 19.2.5(react@19.2.5)
       react-intersection-observer:
-        specifier: ^10.0.0
+        specifier: catalog:web
         version: 10.0.3(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       sonner:
-        specifier: ^2.0.7
+        specifier: catalog:web
         version: 2.0.7(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       viem:
-        specifier: 2.48.8
+        specifier: catalog:web3
         version: 2.48.8(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76)
       wagmi:
-        specifier: 2.19.5
+        specifier: catalog:web3
         version: 2.19.5(@tanstack/query-core@5.100.8)(@tanstack/react-query@5.100.8(react@19.2.5))(@types/react@19.2.14)(bufferutil@4.1.0)(immer@10.0.2)(react@19.2.5)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.48.8(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76))(zod@3.25.76)
     devDependencies:
       '@esc/configs':
         specifier: workspace:*
         version: link:../../packages/configs
       '@tailwindcss/postcss':
-        specifier: ^4.2.4
+        specifier: catalog:web
         version: 4.2.4
       '@types/node':
-        specifier: ^25.1.0
-        version: 25.6.0
+        specifier: 'catalog:'
+        version: 24.12.4
       '@types/react':
-        specifier: ^19.2.14
+        specifier: 'catalog:'
         version: 19.2.14
       '@types/react-dom':
-        specifier: ^19.2.3
+        specifier: 'catalog:'
         version: 19.2.3(@types/react@19.2.14)
       pino-pretty:
-        specifier: ^13.1.2
+        specifier: catalog:tools
         version: 13.1.3
       tailwindcss:
-        specifier: 4.2.4
+        specifier: catalog:web
         version: 4.2.4
       tw-animate-css:
-        specifier: 1.4.0
+        specifier: catalog:web
         version: 1.4.0
 
   apps/indexer:
     dependencies:
       hono:
-        specifier: ^4.5.0
+        specifier: catalog:backend
         version: 4.12.16
       ponder:
-        specifier: ^0.16.6
-        version: 0.16.6(@opentelemetry/api@1.9.1)(@types/node@20.19.39)(bufferutil@4.1.0)(hono@4.12.16)(lightningcss@1.32.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.48.8(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76))(zod@3.25.76)
+        specifier: catalog:backend
+        version: 0.16.6(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(bufferutil@4.1.0)(hono@4.12.16)(lightningcss@1.32.0)(typescript@6.0.2)(utf-8-validate@5.0.10)(viem@2.48.8(bufferutil@4.1.0)(typescript@6.0.2)(utf-8-validate@5.0.10)(zod@3.25.76))(zod@3.25.76)
       viem:
-        specifier: ^2.21.3
-        version: 2.48.8(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76)
+        specifier: catalog:web3
+        version: 2.48.8(bufferutil@4.1.0)(typescript@6.0.2)(utf-8-validate@5.0.10)(zod@3.25.76)
     devDependencies:
       '@esc/configs':
         specifier: workspace:*
         version: link:../../packages/configs
       '@types/node':
-        specifier: ^20.10.0
-        version: 20.19.39
+        specifier: 'catalog:'
+        version: 24.12.4
       typescript:
-        specifier: ^5.3.2
-        version: 5.9.3
+        specifier: 'catalog:'
+        version: 6.0.2
 
   packages/configs: {}
 
   packages/ui:
     dependencies:
       '@hugeicons/core-free-icons':
-        specifier: ^4.1.1
+        specifier: catalog:web
         version: 4.1.1
       '@hugeicons/react':
-        specifier: ^1.1.6
+        specifier: catalog:web
         version: 1.1.6(react@19.2.5)
       class-variance-authority:
-        specifier: ^0.7.1
+        specifier: 'catalog:'
         version: 0.7.1
       clsx:
-        specifier: ^2.1.1
+        specifier: 'catalog:'
         version: 2.1.1
       daisyui:
-        specifier: ^5.5.19
+        specifier: catalog:web
         version: 5.5.19
       motion:
-        specifier: ^12.23.12
+        specifier: catalog:web
         version: 12.38.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       radix-ui:
-        specifier: ^1.4.3
+        specifier: catalog:web
         version: 1.4.3(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react:
-        specifier: ^19.2.4
+        specifier: 'catalog:'
         version: 19.2.5
       react-dom:
-        specifier: ^19.2.4
+        specifier: 'catalog:'
         version: 19.2.5(react@19.2.5)
       shadcn:
-        specifier: ^4.6.0
-        version: 4.6.0(@types/node@25.6.0)(typescript@5.9.3)
+        specifier: catalog:web
+        version: 4.6.0(@types/node@24.12.4)(typescript@6.0.2)
       tailwind-merge:
-        specifier: ^3.5.0
+        specifier: catalog:web
         version: 3.5.0
       tw-animate-css:
-        specifier: ^1.4.0
+        specifier: catalog:web
         version: 1.4.0
       zod:
-        specifier: ^3.25.76
+        specifier: 'catalog:'
         version: 3.25.76
     devDependencies:
       '@esc/configs':
         specifier: workspace:*
         version: link:../configs
       '@tailwindcss/postcss':
-        specifier: ^4.2.4
+        specifier: catalog:web
         version: 4.2.4
       '@types/node':
-        specifier: ^25.1.0
-        version: 25.6.0
+        specifier: 'catalog:'
+        version: 24.12.4
       '@types/react':
-        specifier: ^19.2.10
+        specifier: 'catalog:'
         version: 19.2.14
       '@types/react-dom':
-        specifier: ^19.2.3
+        specifier: 'catalog:'
         version: 19.2.3(@types/react@19.2.14)
       tailwindcss:
-        specifier: ^4.2.4
+        specifier: catalog:web
         version: 4.2.4
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: 'catalog:'
+        version: 6.0.2
 
 packages:
 
@@ -1169,9 +1290,11 @@ packages:
 
   '@metamask/sdk-analytics@0.0.5':
     resolution: {integrity: sha512-fDah+keS1RjSUlC8GmYXvx6Y26s3Ax1U9hGpWb6GSY5SAdmTSIqp2CvYy6yW0WgLhnYhW+6xERuD0eVqV63QIQ==}
+    deprecated: No longer maintained, superseded by @metamask/connect-analytics
 
   '@metamask/sdk-communication-layer@0.33.1':
     resolution: {integrity: sha512-0bI9hkysxcfbZ/lk0T2+aKVo1j0ynQVTuB3sJ5ssPWlz+Z3VwveCkP1O7EVu1tsVVCb0YV5WxK9zmURu2FIiaA==}
+    deprecated: No longer maintained, superseded by https://docs.metamask.io/metamask-connect
     peerDependencies:
       cross-fetch: ^4.0.0
       eciesjs: '*'
@@ -1181,9 +1304,11 @@ packages:
 
   '@metamask/sdk-install-modal-web@0.32.1':
     resolution: {integrity: sha512-MGmAo6qSjf1tuYXhCu2EZLftq+DSt5Z7fsIKr2P+lDgdTPWgLfZB1tJKzNcwKKOdf6q9Qmmxn7lJuI/gq5LrKw==}
+    deprecated: No longer maintained, superseded by https://docs.metamask.io/metamask-connect
 
   '@metamask/sdk@0.33.1':
     resolution: {integrity: sha512-1mcOQVGr9rSrVcbKPNVzbZ8eCl1K0FATsYH3WJ/MH4WcZDWGECWrXJPNMZoEAkLxWiMe8jOQBumg2pmcDa9zpQ==}
+    deprecated: No longer maintained, superseded by https://docs.metamask.io/metamask-connect
 
   '@metamask/superstruct@3.2.1':
     resolution: {integrity: sha512-fLgJnDOXFmuVlB38rUN5SmU7hAFQcCjrg3Vrxz67KTY7YHFnSNEKvX4avmEBdOI0yTCxZjwMCFEqsC8k2+Wd3g==}
@@ -2323,6 +2448,7 @@ packages:
   '@safe-global/safe-gateway-typescript-sdk@3.23.1':
     resolution: {integrity: sha512-6ORQfwtEJYpalCeVO21L4XXGSdbEMfyp2hEv6cP82afKXSwvse6d3sdelgaPWUxHIsFRkWvHDdzh8IyyKHZKxw==}
     engines: {node: '>=16'}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   '@schummar/icu-type-parser@1.21.5':
     resolution: {integrity: sha512-bXHSaW5jRTmke9Vd0h5P7BtWZG9Znqb8gSDxZnxaGSJnGwPLDPfS+3g0BKzeWqzgZPsIVZkM7m2tbo18cm5HBw==}
@@ -2967,11 +3093,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@20.19.39':
-    resolution: {integrity: sha512-orrrD74MBUyK8jOAD/r0+lfa1I2MO6I+vAkmAWzMYbCcgrN4lCrmK52gRFQq/JRxfYPfonkr4b0jcY7Olqdqbw==}
-
-  '@types/node@25.6.0':
-    resolution: {integrity: sha512-+qIYRKdNYJwY3vRCZMdJbPLJAtGjQBudzZzdzwQYkEPQd+PJGixUL5QfvCLDaULoLv+RhT3LDkwEfKaAkgSmNQ==}
+  '@types/node@24.12.4':
+    resolution: {integrity: sha512-GUUEShf+PBCGW2KaXwcIt3Yk+e3pkKwWKb9GSyM9WQVE+ep2jzmHdGsHzu4wgcZy5fN9FBdVzjpBQsYlpfpgLA==}
 
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
@@ -3042,6 +3165,7 @@ packages:
 
   '@walletconnect/ethereum-provider@2.21.1':
     resolution: {integrity: sha512-SSlIG6QEVxClgl1s0LMk4xr2wg4eT3Zn/Hb81IocyqNSGfXpjtawWxKxiC5/9Z95f1INyBD6MctJbL/R1oBwIw==}
+    deprecated: 'Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases'
 
   '@walletconnect/events@1.0.1':
     resolution: {integrity: sha512-NPTqaoi0oPBVNuLv7qPaJazmGHs5JGyO8eEAk5VGKmJzDR7AHzD4k6ilox5kxk1iwiOnFopBOOMLs86Oa76HpQ==}
@@ -3086,9 +3210,11 @@ packages:
 
   '@walletconnect/sign-client@2.21.0':
     resolution: {integrity: sha512-z7h+PeLa5Au2R591d/8ZlziE0stJvdzP9jNFzFolf2RG/OiXulgFKum8PrIyXy+Rg2q95U9nRVUF9fWcn78yBA==}
+    deprecated: 'Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases'
 
   '@walletconnect/sign-client@2.21.1':
     resolution: {integrity: sha512-QaXzmPsMnKGV6tc4UcdnQVNOz4zyXgarvdIQibJ4L3EmLat73r5ZVl4c0cCOcoaV7rgM9Wbphgu5E/7jNcd3Zg==}
+    deprecated: 'Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases'
 
   '@walletconnect/time@1.0.2':
     resolution: {integrity: sha512-uzdd9woDcJ1AaBZRhqy5rNC9laqWGErfc4dxA9a87mPdKOgWMD85mcFo9dIYIts/Jwocfwn07EC6EzclKubk/g==}
@@ -3101,9 +3227,11 @@ packages:
 
   '@walletconnect/universal-provider@2.21.0':
     resolution: {integrity: sha512-mtUQvewt+X0VBQay/xOJBvxsB3Xsm1lTwFjZ6WUwSOTR1X+FNb71hSApnV5kbsdDIpYPXeQUbGt2se1n5E5UBg==}
+    deprecated: 'Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases'
 
   '@walletconnect/universal-provider@2.21.1':
     resolution: {integrity: sha512-Wjx9G8gUHVMnYfxtasC9poGm8QMiPCpXpbbLFT+iPoQskDDly8BwueWnqKs4Mx2SdIAWAwuXeZ5ojk5qQOxJJg==}
+    deprecated: 'Reliability and performance improvements. See: https://github.com/WalletConnect/walletconnect-monorepo/releases'
 
   '@walletconnect/utils@2.21.0':
     resolution: {integrity: sha512-zfHLiUoBrQ8rP57HTPXW7rQMnYxYI4gT9yTACxVW6LhIFROTF6/ytm5SKNoIvi4a5nX5dfXG4D9XwQUCu8Ilig==}
@@ -5720,9 +5848,6 @@ packages:
   tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
 
-  tslib@2.7.0:
-    resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
-
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
@@ -5757,13 +5882,13 @@ packages:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
     engines: {node: '>= 0.4'}
 
-  typescript@5.8.3:
-    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.2:
+    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -5784,11 +5909,8 @@ packages:
   uncrypto@0.1.3:
     resolution: {integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==}
 
-  undici-types@6.21.0:
-    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
-
-  undici-types@7.19.2:
-    resolution: {integrity: sha512-qYVnV5OEm2AW8cJMCpdV20CDyaN3g0AjDlOGf1OW4iaDEx8MwdtChUp4zu4H0VP3nDRF/8RKWH+IPp9uW0YGZg==}
+  undici-types@7.16.0:
+    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
 
   undici-types@7.25.0:
     resolution: {integrity: sha512-AXNgS1Byr27fTI+2bsPEkV9CxkT8H6xNyRI68b3TatlZo3RkzlqQBLL+w7SmGPVpokjHbcuNVQUWE7FRTg+LRA==}
@@ -7060,30 +7182,30 @@ snapshots:
 
   '@inquirer/ansi@2.0.5': {}
 
-  '@inquirer/confirm@6.0.12(@types/node@25.6.0)':
+  '@inquirer/confirm@6.0.12(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/core': 11.1.9(@types/node@25.6.0)
-      '@inquirer/type': 4.0.5(@types/node@25.6.0)
+      '@inquirer/core': 11.1.9(@types/node@24.12.4)
+      '@inquirer/type': 4.0.5(@types/node@24.12.4)
     optionalDependencies:
-      '@types/node': 25.6.0
+      '@types/node': 24.12.4
 
-  '@inquirer/core@11.1.9(@types/node@25.6.0)':
+  '@inquirer/core@11.1.9(@types/node@24.12.4)':
     dependencies:
       '@inquirer/ansi': 2.0.5
       '@inquirer/figures': 2.0.5
-      '@inquirer/type': 4.0.5(@types/node@25.6.0)
+      '@inquirer/type': 4.0.5(@types/node@24.12.4)
       cli-width: 4.1.0
       fast-wrap-ansi: 0.2.0
       mute-stream: 3.0.0
       signal-exit: 4.1.0
     optionalDependencies:
-      '@types/node': 25.6.0
+      '@types/node': 24.12.4
 
   '@inquirer/figures@2.0.5': {}
 
-  '@inquirer/type@4.0.5(@types/node@25.6.0)':
+  '@inquirer/type@4.0.5(@types/node@24.12.4)':
     optionalDependencies:
-      '@types/node': 25.6.0
+      '@types/node': 24.12.4
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -7494,11 +7616,11 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@ponder/utils@0.2.18(typescript@5.9.3)(viem@2.48.8(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76))':
+  '@ponder/utils@0.2.18(typescript@6.0.2)(viem@2.48.8(bufferutil@4.1.0)(typescript@6.0.2)(utf-8-validate@5.0.10)(zod@3.25.76))':
     dependencies:
-      viem: 2.48.8(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76)
+      viem: 2.48.8(bufferutil@4.1.0)(typescript@6.0.2)(utf-8-validate@5.0.10)(zod@3.25.76)
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.2
 
   '@poppinss/colors@4.1.6':
     dependencies:
@@ -9295,13 +9417,9 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@20.19.39':
+  '@types/node@24.12.4':
     dependencies:
-      undici-types: 6.21.0
-
-  '@types/node@25.6.0':
-    dependencies:
-      undici-types: 7.19.2
+      undici-types: 7.16.0
 
   '@types/react-dom@19.2.3(@types/react@19.2.14)':
     dependencies:
@@ -9313,7 +9431,7 @@ snapshots:
 
   '@types/set-cookie-parser@2.4.10':
     dependencies:
-      '@types/node': 25.6.0
+      '@types/node': 24.12.4
 
   '@types/statuses@2.0.6': {}
 
@@ -9986,9 +10104,9 @@ snapshots:
       '@whatwg-node/promise-helpers': 1.3.2
       tslib: 2.8.1
 
-  abitype@0.10.3(typescript@5.9.3)(zod@3.25.76):
+  abitype@0.10.3(typescript@6.0.2)(zod@3.25.76):
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.2
       zod: 3.25.76
 
   abitype@1.0.6(typescript@5.9.3)(zod@3.25.76):
@@ -10015,6 +10133,11 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
       zod: 4.4.2
+
+  abitype@1.2.3(typescript@6.0.2)(zod@3.25.76):
+    optionalDependencies:
+      typescript: 6.0.2
+      zod: 3.25.76
 
   abort-controller@3.0.0:
     dependencies:
@@ -10299,14 +10422,14 @@ snapshots:
       object-assign: 4.1.1
       vary: 1.1.2
 
-  cosmiconfig@9.0.1(typescript@5.9.3):
+  cosmiconfig@9.0.1(typescript@6.0.2):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
       js-yaml: 4.1.1
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.2
 
   crc-32@1.2.2: {}
 
@@ -11363,9 +11486,9 @@ snapshots:
 
   ms@2.1.3: {}
 
-  msw@2.14.2(@types/node@25.6.0)(typescript@5.9.3):
+  msw@2.14.2(@types/node@24.12.4)(typescript@6.0.2):
     dependencies:
-      '@inquirer/confirm': 6.0.12(@types/node@25.6.0)
+      '@inquirer/confirm': 6.0.12(@types/node@24.12.4)
       '@mswjs/interceptors': 0.41.8
       '@open-draft/deferred-promise': 3.0.0
       '@types/statuses': 2.0.6
@@ -11384,7 +11507,7 @@ snapshots:
       until-async: 3.0.2
       yargs: 17.7.2
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.2
     transitivePeerDependencies:
       - '@types/node'
 
@@ -11583,6 +11706,21 @@ snapshots:
       eventemitter3: 5.0.1
     optionalDependencies:
       typescript: 5.9.3
+    transitivePeerDependencies:
+      - zod
+
+  ox@0.14.20(typescript@6.0.2)(zod@3.25.76):
+    dependencies:
+      '@adraffy/ens-normalize': 1.11.1
+      '@noble/ciphers': 1.3.0
+      '@noble/curves': 1.9.1
+      '@noble/hashes': 1.8.0
+      '@scure/bip32': 1.7.0
+      '@scure/bip39': 1.6.0
+      abitype: 1.2.3(typescript@6.0.2)(zod@3.25.76)
+      eventemitter3: 5.0.1
+    optionalDependencies:
+      typescript: 6.0.2
     transitivePeerDependencies:
       - zod
 
@@ -11807,7 +11945,7 @@ snapshots:
 
   po-parser@2.1.1: {}
 
-  ponder@0.16.6(@opentelemetry/api@1.9.1)(@types/node@20.19.39)(bufferutil@4.1.0)(hono@4.12.16)(lightningcss@1.32.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.48.8(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76))(zod@3.25.76):
+  ponder@0.16.6(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(bufferutil@4.1.0)(hono@4.12.16)(lightningcss@1.32.0)(typescript@6.0.2)(utf-8-validate@5.0.10)(viem@2.48.8(bufferutil@4.1.0)(typescript@6.0.2)(utf-8-validate@5.0.10)(zod@3.25.76))(zod@3.25.76):
     dependencies:
       '@babel/code-frame': 7.29.0
       '@commander-js/extra-typings': 12.1.0(commander@12.1.0)
@@ -11816,8 +11954,8 @@ snapshots:
       '@escape.tech/graphql-armor-max-depth': 2.4.2
       '@escape.tech/graphql-armor-max-tokens': 2.5.1
       '@hono/node-server': 1.19.5(hono@4.12.16)
-      '@ponder/utils': 0.2.18(typescript@5.9.3)(viem@2.48.8(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76))
-      abitype: 0.10.3(typescript@5.9.3)(zod@3.25.76)
+      '@ponder/utils': 0.2.18(typescript@6.0.2)(viem@2.48.8(bufferutil@4.1.0)(typescript@6.0.2)(utf-8-validate@5.0.10)(zod@3.25.76))
+      abitype: 0.10.3(typescript@6.0.2)(zod@3.25.76)
       ansi-escapes: 7.2.0
       commander: 12.1.0
       conf: 12.0.0
@@ -11842,13 +11980,13 @@ snapshots:
       stacktrace-parser: 0.1.11
       superjson: 2.2.6
       terminal-size: 4.0.1
-      viem: 2.48.8(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@3.25.76)
-      vite: 5.4.21(@types/node@20.19.39)(lightningcss@1.32.0)
-      vite-node: 1.0.2(@types/node@20.19.39)(lightningcss@1.32.0)
-      vite-tsconfig-paths: 4.3.1(typescript@5.9.3)(vite@5.4.21(@types/node@20.19.39)(lightningcss@1.32.0))
+      viem: 2.48.8(bufferutil@4.1.0)(typescript@6.0.2)(utf-8-validate@5.0.10)(zod@3.25.76)
+      vite: 5.4.21(@types/node@24.12.4)(lightningcss@1.32.0)
+      vite-node: 1.0.2(@types/node@24.12.4)(lightningcss@1.32.0)
+      vite-tsconfig-paths: 4.3.1(typescript@6.0.2)(vite@5.4.21(@types/node@24.12.4)(lightningcss@1.32.0))
       ws: 8.20.0(bufferutil@4.1.0)(utf-8-validate@5.0.10)
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.2
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
       - '@cloudflare/workers-types'
@@ -12095,7 +12233,7 @@ snapshots:
     dependencies:
       react: 19.2.5
       react-style-singleton: 2.2.3(@types/react@19.2.14)(react@19.2.5)
-      tslib: 2.7.0
+      tslib: 2.8.1
     optionalDependencies:
       '@types/react': 19.2.14
 
@@ -12125,7 +12263,7 @@ snapshots:
     dependencies:
       get-nonce: 1.0.1
       react: 19.2.5
-      tslib: 2.7.0
+      tslib: 2.8.1
     optionalDependencies:
       '@types/react': 19.2.14
 
@@ -12309,7 +12447,7 @@ snapshots:
       safe-buffer: 5.2.1
       to-buffer: 1.2.2
 
-  shadcn@4.6.0(@types/node@25.6.0)(typescript@5.9.3):
+  shadcn@4.6.0(@types/node@24.12.4)(typescript@6.0.2):
     dependencies:
       '@babel/core': 7.29.0
       '@babel/parser': 7.29.3
@@ -12320,7 +12458,7 @@ snapshots:
       '@types/validate-npm-package-name': 4.0.2
       browserslist: 4.28.2
       commander: 14.0.2
-      cosmiconfig: 9.0.1(typescript@5.9.3)
+      cosmiconfig: 9.0.1(typescript@6.0.2)
       dedent: 1.7.2
       deepmerge: 4.3.1
       diff: 8.0.4
@@ -12330,7 +12468,7 @@ snapshots:
       fuzzysort: 3.1.0
       https-proxy-agent: 7.0.6
       kleur: 4.1.5
-      msw: 2.14.2(@types/node@25.6.0)(typescript@5.9.3)
+      msw: 2.14.2(@types/node@24.12.4)(typescript@6.0.2)
       node-fetch: 3.3.2
       open: 11.0.0
       ora: 8.2.0
@@ -12608,9 +12746,9 @@ snapshots:
       '@ts-morph/common': 0.27.0
       code-block-writer: 13.0.3
 
-  tsconfck@3.1.6(typescript@5.9.3):
+  tsconfck@3.1.6(typescript@6.0.2):
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.2
 
   tsconfig-paths@4.2.0:
     dependencies:
@@ -12619,8 +12757,6 @@ snapshots:
       strip-bom: 3.0.0
 
   tslib@1.14.1: {}
-
-  tslib@2.7.0: {}
 
   tslib@2.8.1: {}
 
@@ -12657,9 +12793,10 @@ snapshots:
       es-errors: 1.3.0
       is-typed-array: 1.1.15
 
-  typescript@5.8.3: {}
+  typescript@5.9.3:
+    optional: true
 
-  typescript@5.9.3: {}
+  typescript@6.0.2: {}
 
   ua-parser-js@1.0.41: {}
 
@@ -12673,9 +12810,7 @@ snapshots:
 
   uncrypto@0.1.3: {}
 
-  undici-types@6.21.0: {}
-
-  undici-types@7.19.2: {}
+  undici-types@7.16.0: {}
 
   undici-types@7.25.0: {}
 
@@ -12717,7 +12852,7 @@ snapshots:
   use-callback-ref@1.3.3(@types/react@19.2.14)(react@19.2.5):
     dependencies:
       react: 19.2.5
-      tslib: 2.7.0
+      tslib: 2.8.1
     optionalDependencies:
       '@types/react': 19.2.14
 
@@ -12733,7 +12868,7 @@ snapshots:
     dependencies:
       detect-node-es: 1.1.0
       react: 19.2.5
-      tslib: 2.7.0
+      tslib: 2.8.1
     optionalDependencies:
       '@types/react': 19.2.14
 
@@ -12831,13 +12966,30 @@ snapshots:
       - utf-8-validate
       - zod
 
-  vite-node@1.0.2(@types/node@20.19.39)(lightningcss@1.32.0):
+  viem@2.48.8(bufferutil@4.1.0)(typescript@6.0.2)(utf-8-validate@5.0.10)(zod@3.25.76):
+    dependencies:
+      '@noble/curves': 1.9.1
+      '@noble/hashes': 1.8.0
+      '@scure/bip32': 1.7.0
+      '@scure/bip39': 1.6.0
+      abitype: 1.2.3(typescript@6.0.2)(zod@3.25.76)
+      isows: 1.0.7(ws@8.18.3(bufferutil@4.1.0)(utf-8-validate@5.0.10))
+      ox: 0.14.20(typescript@6.0.2)(zod@3.25.76)
+      ws: 8.18.3(bufferutil@4.1.0)(utf-8-validate@5.0.10)
+    optionalDependencies:
+      typescript: 6.0.2
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+      - zod
+
+  vite-node@1.0.2(@types/node@24.12.4)(lightningcss@1.32.0):
     dependencies:
       cac: 6.7.14
       debug: 4.4.3
       pathe: 1.1.2
       picocolors: 1.1.1
-      vite: 5.4.21(@types/node@20.19.39)(lightningcss@1.32.0)
+      vite: 5.4.21(@types/node@24.12.4)(lightningcss@1.32.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -12849,24 +13001,24 @@ snapshots:
       - supports-color
       - terser
 
-  vite-tsconfig-paths@4.3.1(typescript@5.9.3)(vite@5.4.21(@types/node@20.19.39)(lightningcss@1.32.0)):
+  vite-tsconfig-paths@4.3.1(typescript@6.0.2)(vite@5.4.21(@types/node@24.12.4)(lightningcss@1.32.0)):
     dependencies:
       debug: 4.4.3
       globrex: 0.1.2
-      tsconfck: 3.1.6(typescript@5.9.3)
+      tsconfck: 3.1.6(typescript@6.0.2)
     optionalDependencies:
-      vite: 5.4.21(@types/node@20.19.39)(lightningcss@1.32.0)
+      vite: 5.4.21(@types/node@24.12.4)(lightningcss@1.32.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@5.4.21(@types/node@20.19.39)(lightningcss@1.32.0):
+  vite@5.4.21(@types/node@24.12.4)(lightningcss@1.32.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.13
       rollup: 4.60.2
     optionalDependencies:
-      '@types/node': 20.19.39
+      '@types/node': 24.12.4
       fsevents: 2.3.3
       lightningcss: 1.32.0
 
